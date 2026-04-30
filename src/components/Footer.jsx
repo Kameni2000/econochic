@@ -25,9 +25,9 @@ const Footer = () => {
         {/* Colonne 3 : Service Client */}
         <div className="flex flex-col space-y-4">
           <h4 className="text-[10px] uppercase tracking-[0.3em] text-zinc-300 mb-2">Service Client</h4>
-          <Link href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">FAQ</Link>
+          <Link href="/faq" className="text-zinc-500 hover:text-white text-sm transition-colors">FAQ</Link>
           <Link href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Livraison & Retours</Link>
-          <Link href="#" className="text-zinc-500 hover:text-white text-sm transition-colors">Conditions de Vente</Link>
+          <Link href="/cgv" className="text-zinc-500 hover:text-white text-sm transition-colors">Conditions de Vente</Link>
         </div>
 
         {/* Colonne 4 : Boutique */}

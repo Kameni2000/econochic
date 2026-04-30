@@ -8,26 +8,34 @@ const Header = () => {
   const { cart, openDrawer } = useCartStore();
   const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
+  // Définition explicite des liens pour éviter les erreurs d'URL
+  const menuItems = [
+    { name: 'Accueil', path: '/' },
+    { name: 'Collections', path: '/collections' },
+    { name: 'À Propos', path: '/a-propos' },
+    { name: 'Contact', path: '/contact' }
+  ];
+
   return (
     <header className="fixed top-0 left-0 w-full z-[100] bg-black/70 backdrop-blur-md border-b border-white/10 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between relative">
         
         {/* NAVIGATION GAUCHE */}
         <nav className="hidden md:flex space-x-6 z-10">
-          {['Accueil', 'Mariage', 'Bal', 'Contact'].map((item) => (
+          {menuItems.map((item) => (
             <Link 
-              key={item} 
-              href={item === 'Accueil' ? '/' : `/#${item.toLowerCase()}`} 
-              className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 hover:text-white transition-colors"
+              key={item.name} 
+              href={item.path} 
+              className="text-[10px] uppercase tracking-[0.2em] text-zinc-400 hover:text-[#D4AF37] transition-colors duration-300"
             >
-              {item}
+              {item.name}
             </Link>
           ))}
         </nav>
 
         {/* LOGO AU CENTRE */}
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
-          <Link href="/" className="text-xl font-serif tracking-[0.4em] text-white hover:opacity-80 transition-opacity">
+          <Link href="/" className="text-xl font-serif tracking-[0.4em] text-white hover:text-[#D4AF37] transition-colors duration-300">
             ÉCONOCHIC
           </Link>
         </div>
@@ -36,11 +44,11 @@ const Header = () => {
         <div className="flex items-center space-x-6 z-10">
           <button 
             onClick={openDrawer}
-            className="relative text-white hover:text-zinc-300 transition-colors p-2 cursor-pointer"
+            className="relative text-white hover:text-[#D4AF37] transition-colors duration-300 p-2 cursor-pointer"
           >
             <ShoppingBag size={20} strokeWidth={1.5} />
             {totalItems > 0 && (
-              <span className="absolute -top-1 -right-1 bg-white text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
+              <span className="absolute -top-1 -right-1 bg-[#D4AF37] text-black text-[9px] font-bold w-4 h-4 rounded-full flex items-center justify-center animate-pulse">
                 {totalItems}
               </span>
             )}

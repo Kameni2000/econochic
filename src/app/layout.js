@@ -3,6 +3,7 @@ import "./globals.css";
 import CartDrawer from '@/components/CartDrawer'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import WhatsAppButton from '@/components/WhatsAppButton';
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -32,6 +33,8 @@ export default function RootLayout({ children }) {
         {children}
         {/* 3. Ajoute le Footer ici pour qu'il soit disponible partout */}
         <Footer />
+        {/* 4. Ajoute le bouton WhatsApp ici pour qu'il soit disponible partout */}
+        <WhatsAppButton />
       </body>
     </html>
   );
