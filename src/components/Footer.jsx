@@ -40,8 +40,15 @@ const Footer = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-8 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] uppercase tracking-widest text-zinc-600">
-        <p>© {new Date().getFullYear()} Éconochic. Tous droits réservés.</p>
-        <div className="flex space-x-6 mt-4 md:mt-0">
+          {/* Ligne de droits d'auteur stylisée */}
+          <div className="mt-12 pt-8 border-t border-zinc-800 flex flex-col items-center justify-center text-center">
+            <p className="text-zinc-500 text-xs uppercase tracking-widest">
+              &copy; {new Date().getFullYear()} <span className="text-white font-serif tracking-[0.2em]">Onyx <span className="text-[#D4AF37] font-light italic">&</span> Soie</span>
+            </p>
+            <p className="text-[#D4AF37] text-[10px] uppercase tracking-[0.3em] mt-2 opacity-80">
+              By Kameni • Tous droits réservés
+            </p>
+          </div>        <div className="flex space-x-6 mt-4 md:mt-0">
           <Link href="#" className="hover:text-white transition-colors">Instagram</Link>
           <Link href="#" className="hover:text-white transition-colors">Facebook</Link>
           <Link href="#" className="hover:text-white transition-colors">Pinterest</Link>

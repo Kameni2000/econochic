@@ -35,8 +35,23 @@ const Header = () => {
 
         {/* LOGO AU CENTRE */}
         <div className="absolute left-1/2 transform -translate-x-1/2 z-10">
-          <Link href="/" className="text-xl font-serif tracking-[0.4em] text-white hover:text-[#D4AF37] transition-colors duration-300">
-            ÉCONOCHIC
+          <Link href="/" className="flex flex-col items-center justify-center group relative">
+            {/* Halo lumineux subtil qui apparaît au survol */}
+            <div className="absolute inset-0 bg-[#D4AF37] blur-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-700"></div>
+
+            {/* Titre Principal Onyx & Soie */}
+            <span className="text-2xl md:text-4xl font-serif tracking-[0.2em] text-white uppercase transition-all duration-500 group-hover:tracking-[0.25em]">
+              Onyx <span className="text-[#D4AF37] font-light italic mx-1">&</span> Soie
+            </span>
+
+            {/* Signature encadrée avec lignes de fondu */}
+            <div className="flex items-center gap-3 mt-2 opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+              <span className="w-8 h-[1px] bg-gradient-to-r from-transparent to-[#D4AF37]"></span>
+              <span className="text-[9px] md:text-[11px] tracking-[0.4em] text-[#D4AF37] uppercase font-light">
+                By Kameni
+              </span>
+              <span className="w-8 h-[1px] bg-gradient-to-l from-transparent to-[#D4AF37]"></span>
+            </div>
           </Link>
         </div>
 
